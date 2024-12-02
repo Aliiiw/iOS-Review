@@ -9,31 +9,57 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    // MARK: with control and drag drop add the outlet to VC
+    @IBOutlet weak var firstText:UITextField!
     
-    @IBOutlet var imageView: UIImageView!
-    
-    
-    
-    // MARK: we need to connect object in story board into VC
+    @IBOutlet weak var secondText: UITextField!
     
     
-    // MARK: first function that will be execute
+    @IBOutlet weak var resultLabel: UILabel!
+    
+    var result = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-        print("Hello World")
+        
         
     }
-    
-    
-    // MARK: it should be drag into class
-    
-    @IBAction func changeButton(_ sender: Any) {
-        imageView.image = UIImage.pic1
-    }
-    
 
+
+    @IBAction func buttonSum(_ sender: Any) {
+        if let firstNumber = Int(firstText.text!){
+            if let secondNumber = Int(secondText.text!){
+                 result = firstNumber + secondNumber
+                resultLabel.text = String(result)
+            }
+        }
+    }
+    
+    @IBAction func buttonMinus(_ sender: Any) {
+        if let firstNumber = Int(firstText.text!){
+            if let secondNumber = Int(secondText.text!){
+                 result = firstNumber - secondNumber
+                resultLabel.text = String(result)
+            }
+        }
+    }
+    
+    @IBAction func buttonMultiply(_ sender: Any) {
+        if let firstNumber = Int(firstText.text!){
+            if let secondNumber = Int(secondText.text!){
+                 result = firstNumber * secondNumber
+                resultLabel.text = String(result)
+            }
+        }
+    }
+    
+    @IBAction func buttonDivider(_ sender: Any) {
+        if let firstNumber = Int(firstText.text!){
+            if let secondNumber = Int(secondText.text!){
+                 result = firstNumber / secondNumber
+                resultLabel.text = String(result)
+            }
+        }
+    }
 }
 
