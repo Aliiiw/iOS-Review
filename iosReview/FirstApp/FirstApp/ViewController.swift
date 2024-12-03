@@ -9,31 +9,26 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    // MARK: with control and drag drop add the outlet to VC
     
-    @IBOutlet var imageView: UIImageView!
-    
-    
-    
-    // MARK: we need to connect object in story board into VC
-    
-    
-    // MARK: first function that will be execute
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-        print("Hello World")
+        // current width
+        let width = view.frame.size.width
+        
+        // current height
+        let height = view.frame.size.height
+        
+        
+        
+        // Label
+        let myLabel = UILabel()
+        myLabel.text = "Test Label"
+        myLabel.textAlignment = .center
+        myLabel.frame = CGRect(x: width * 0.5 - width * 0.8 / 2, y: height * 0.5 - 50/2, width: width * 0.8, height: 50)
+        view.addSubview(myLabel)
         
     }
     
-    
-    // MARK: it should be drag into class
-    
-    @IBAction func changeButton(_ sender: Any) {
-        imageView.image = UIImage.pic1
-    }
-    
-
 }
 
